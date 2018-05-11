@@ -107,7 +107,6 @@ export class NavBarPage {
         return new SettingsPage();
     }
 
-    @stepAnnotation()
     goToEntity(entityName: string) {
         this.clickOnEntityMenu();
         return this.clickOnEntity(entityName);
@@ -125,7 +124,6 @@ export class NavBarPage {
         this.clickOnPasswordMenu();
     }
 
-    @stepAnnotation()
     autoSignOut() {
         this.clickOnAccountMenu();
         this.clickOnSignOut();
