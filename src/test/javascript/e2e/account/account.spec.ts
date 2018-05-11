@@ -1,5 +1,5 @@
 import {browser, by, element} from 'protractor';
-import {NavBarPage, PageWrapper, PasswordPage, SettingsPage, SignInPage} from './../page-objects/jhi-page-objects';
+import {NavBarPage, PasswordPage, SettingsPage, SignInPage} from './../page-objects/jhi-page-objects';
 
 let scenarioo = require('scenarioo-js');
 
@@ -25,17 +25,14 @@ describe('account', () => {
         element.all(by.css('h1')).first().getText().then((value) => {
             expect(value).toMatch(expect1);
         });
-        scenarioo.saveStep('Welcome message is displayed');
 
         signInPage = navBarPage.getSignInPage();
-        scenarioo.saveStep('Signin Page displayed');
         signInPage.autoSignInUsing('admin', 'foo');
 
         const expect2 = /Failed to sign in!/;
         element.all(by.css('.alert-danger')).first().getText().then((value) => {
             expect(value).toMatch(expect2);
         });
-        scenarioo.saveStep('Failed Signin displayed');
     });
 
     it('should login successfully with admin account', () => {
