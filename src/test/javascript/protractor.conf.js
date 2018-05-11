@@ -61,7 +61,7 @@ exports.config = {
 
             // Define a unique human readable identifier of the page the test is currently on (usually a part of the URL)
             pageNameExtractor: function (url) {
-                return url.pathname;
+                return url.hash || url.pathname;
             },
 
             // Enable automatic screenshot step generated on each expectation failed
