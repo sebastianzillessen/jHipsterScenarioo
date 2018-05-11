@@ -1,7 +1,7 @@
 import {browser, by, element} from 'protractor';
-import {NavBarPage, PasswordPage, SettingsPage, SignInPage} from './../page-objects/jhi-page-objects';
+import {NavBarPage, PasswordPage, SettingsPage, SignInPage} from '../page-objects/jhi-page-objects';
 
-let scenarioo = require('scenarioo-js');
+const scenarioo = require('scenarioo-js');
 
 describe('account', () => {
 

@@ -17,7 +17,7 @@ function stepAnnotation() {
         };
 
         return descriptor;
-    }
+    };
 }
 
 export class NavBarPage {
@@ -25,7 +25,6 @@ export class NavBarPage {
     accountMenu = element(by.id('account-menu'));
     adminMenu: ElementFinder;
     signIn = element(by.id('login'));
-    register = element(by.css('[routerLink="register"]'));
     signOut = element(by.id('logout'));
     passwordMenu = element(by.css('[routerLink="password"]'));
     settingsMenu = element(by.css('[routerLink="settings"]'));

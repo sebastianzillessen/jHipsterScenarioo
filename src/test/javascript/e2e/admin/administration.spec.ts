@@ -1,7 +1,7 @@
 import { browser, element, by } from 'protractor';
 import { NavBarPage } from './../page-objects/jhi-page-objects';
 
-let scenarioo = require('scenarioo-js');
+const scenarioo = require('scenarioo-js');
 describe('administration', () => {
 
     let navBarPage: NavBarPage;
