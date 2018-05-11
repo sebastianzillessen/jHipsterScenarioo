@@ -1,6 +1,7 @@
 import { browser, element, by } from 'protractor';
 import { NavBarPage } from './../page-objects/jhi-page-objects';
 
+let scenarioo = require('scenarioo-js');
 describe('administration', () => {
 
     let navBarPage: NavBarPage;
@@ -16,6 +17,9 @@ describe('administration', () => {
     beforeEach(() => {
         navBarPage.clickOnAdminMenu();
     });
+
+    afterEach(scenarioo.saveLastStep);
+
     it('should load user management', () => {
         navBarPage.clickOnAdmin('user-management');
         const expect1 = /Users/;
