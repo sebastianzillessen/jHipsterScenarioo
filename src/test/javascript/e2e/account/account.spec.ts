@@ -1,6 +1,8 @@
 import {browser, by, element} from 'protractor';
 import {NavBarPage, PasswordPage, SettingsPage, SignInPage} from './../page-objects/jhi-page-objects';
 
+import {scenario, ScreenAnnotationClickAction, ScreenAnnotationStyle, step, useCase} from 'scenarioo-js';
+
 describe('account', () => {
 
     let navBarPage: NavBarPage;
@@ -9,11 +11,18 @@ describe('account', () => {
     let settingsPage: SettingsPage;
 
     beforeAll(() => {
+        // setting useCase context properties must be done in a beforeAll block because of the way jasmine
+        // executes the tests.
+        scenarioo.getUseCaseContext().setDescription('Account registration process');
+        scenarioo.getUseCaseContext().addLabels(['account']);
+
         browser.get('/');
         browser.waitForAngular();
         navBarPage = new NavBarPage(true);
         browser.waitForAngular();
     });
+
+    afterEach(scenarioo.saveLastStep);
 
     it('should fail to login with bad password', () => {
         const expect1 = /Welcome, Java Hipster!/;
