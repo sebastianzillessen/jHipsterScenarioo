@@ -61,6 +61,7 @@ export class NavBarPage {
         this.clickOnSignIn();
         return new SignInPage();
     }
+
     getPasswordPage() {
         this.clickOnAccountMenu();
         this.clickOnPasswordMenu();

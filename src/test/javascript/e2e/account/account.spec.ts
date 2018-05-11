@@ -1,5 +1,5 @@
 import {browser, by, element} from 'protractor';
-import {NavBarPage, PasswordPage, SettingsPage, SignInPage} from './../page-objects/jhi-page-objects';
+import {NavBarPage, PageWrapper, PasswordPage, SettingsPage, SignInPage} from './../page-objects/jhi-page-objects';
 
 let scenarioo = require('scenarioo-js');
 
@@ -12,7 +12,6 @@ describe('account', () => {
 
     beforeAll(() => {
         browser.get('/');
-        scenarioo.saveStep('index');
 
         browser.waitForAngular();
         navBarPage = new NavBarPage(true);
