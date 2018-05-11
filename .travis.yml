@@ -33,6 +33,7 @@ script:
   - chmod +x gradlew
   - ./gradlew clean test
   - yarn test
+  - yarn e2e
   - ./gradlew bootRepackage -Pprod -x test
 notifications:
   webhooks:

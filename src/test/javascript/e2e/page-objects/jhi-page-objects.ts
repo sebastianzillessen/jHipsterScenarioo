@@ -1,13 +1,13 @@
 import {by, element, ElementFinder} from 'protractor';
 
-let scenarioo = require('scenarioo-js');
+const scenarioo = require('scenarioo-js');
 function stepAnnotation() {
-    return function (target, propertyKey: string, descriptor: PropertyDescriptor) {
+    return function(target, propertyKey: string, descriptor: PropertyDescriptor) {
 
         const originalMethod = descriptor.value;
 
-        descriptor.value = function (...args: any[]) {
-            let stepDescription = `${target.constructor.name}: ${propertyKey}`;
+        descriptor.value = function(...args: any[]) {
+            const stepDescription = `${target.constructor.name}: ${propertyKey}`;
 
             scenarioo.saveStep(stepDescription);
 
