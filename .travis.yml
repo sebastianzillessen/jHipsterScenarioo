@@ -34,9 +34,11 @@ install:
 script:
   - chmod +x gradlew
   - ./gradlew clean test
-  - xvfb-run make test
   - yarn test
-  - yarn e2e
+  - ./gradlew bootRun &
+  - sleep 30
+  - xvfb-run yarn e2e
+  - ./gradlew --stop
   - ./gradlew bootRepackage -Pprod -x test
 notifications:
   webhooks:
