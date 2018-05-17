@@ -4,7 +4,7 @@ var scenarioo = require('scenarioo-js');
 
 exports.config = {
     allScriptsTimeout: 20000,
-
+    getPageTimeout: 30000,
     specs: [
         './e2e/account/*.spec.ts',
         './e2e/admin/*.spec.ts',
