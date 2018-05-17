@@ -14,6 +14,8 @@ cache:
     - node_modules
     - $HOME/.gradle
     - $HOME/.yarn-cache
+addons:
+  chrome: stable
 env:
   global:
     - NODE_VERSION=8.9.4
@@ -32,6 +34,7 @@ install:
 script:
   - chmod +x gradlew
   - ./gradlew clean test
+  - xvfb-run make test
   - yarn test
   - yarn e2e
   - ./gradlew bootRepackage -Pprod -x test
